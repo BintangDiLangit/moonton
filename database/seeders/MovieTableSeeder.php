@@ -20,7 +20,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Comedy',
                 'video_url' => 'https://www.youtube.com/watch?v=6zTc2hD2npA',
                 'thumbnail' => 'https://i.ytimg.com/vi/6zTc2hD2npA/maxresdefault.jpg',
-                'rating' => 9.5,
+                'rating' => 4.5,
                 'is_featured' => false
             ],
             [
@@ -29,7 +29,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Drama',
                 'video_url' => 'https://www.youtube.com/watch?v=YtEYWMuw5c8',
                 'thumbnail' => 'https://msmagazine.com/wp-content/uploads/2011/05/pirates-penelope-cruz-poster__oPt.jpg',
-                'rating' => 8.5,
+                'rating' => 3.5,
                 'is_featured' => true
             ],
             [
@@ -38,7 +38,7 @@ class MovieTableSeeder extends Seeder
                 'category' => 'Comedy',
                 'video_url' => 'https://www.youtube.com/watch?v=yRh-dzrI4Z4',
                 'thumbnail' => 'https://m.media-amazon.com/images/M/MV5BMTYyMTcxNzc5M15BMl5BanBnXkFtZTgwOTg2ODE2MTI@._V1_FMjpg_UX1000_.jpg',
-                'rating' => 8.2,
+                'rating' => 3.7,
                 'is_featured' => false
             ]
         ];
