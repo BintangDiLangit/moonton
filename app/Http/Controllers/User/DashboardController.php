@@ -9,6 +9,13 @@ use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
+    private $imageUrl;
+
+    public function __construct()
+    {
+        $this->imageUrl = env('IMAGE_URL');
+    }
+
     public function index()
     {
         $featuredMovies = Movie::whereIsFeatured(true)->get();
@@ -16,7 +23,8 @@ class DashboardController extends Controller
 
         return Inertia::render('User/Dashboard/Index', [
             'featuredMovies' => $featuredMovies,
-            'movies' => $movies
+            'movies' => $movies,
+            'imageUrl' => $this->imageUrl
         ]);
     }
 }
