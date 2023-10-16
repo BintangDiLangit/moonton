@@ -1,11 +1,13 @@
 import Button from "@/Components/Button";
 import FlashMessage from "@/Components/FlashMassage";
 import Authenticated from "@/Layouts/Authenticated";
-import { Link } from "@inertiajs/react";
+import { Link, Head, useForm } from "@inertiajs/react";
 
 export default function Index({ auth, flashMessage, movies, imageUrl }) {
+    const { delete: destroy, put } = useForm();
     return (
         <Authenticated auth={auth}>
+            <Head title="List of Movies" />
             <Link href={route("admin.dashboard.movie.create")}>
                 <Button type="button" className="w-40 mb-8 mt-5">
                     Insert New Movie
@@ -37,28 +39,41 @@ export default function Index({ auth, flashMessage, movies, imageUrl }) {
                             <td>{movie.category}</td>
                             <td>{movie.rating.toFixed(1)}</td>
                             <td>
-                                <Button type="button" variant="warning">
-                                    <Link
-                                        href={route(
-                                            "admin.dashboard.movie.edit",
-                                            movie.id
-                                        )}
-                                    >
+                                <Link
+                                    href={route(
+                                        "admin.dashboard.movie.edit",
+                                        movie.id
+                                    )}
+                                >
+                                    <Button type="button" variant="warning">
                                         Edit
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             </td>
                             <td>
-                                <Button type="button" variant="danger">
-                                    <Link
-                                        href={route(
-                                            "admin.dashboard.movie.destroy",
-                                            movie.id
-                                        )}
-                                    >
-                                        Delete
-                                    </Link>
-                                </Button>
+                                <div
+                                    onClick={() => {
+                                        movie.deleted_at
+                                            ? put(
+                                                  route(
+                                                      "admin.dashboard.movie.restore",
+                                                      movie.id
+                                                  )
+                                              )
+                                            : destroy(
+                                                  route(
+                                                      "admin.dashboard.movie.destroy",
+                                                      movie.id
+                                                  )
+                                              );
+                                    }}
+                                >
+                                    <Button type="button" variant="danger">
+                                        {movie.deleted_at
+                                            ? "Restore"
+                                            : "Delete"}
+                                    </Button>
+                                </div>
                             </td>
                         </tr>
                     ))}
