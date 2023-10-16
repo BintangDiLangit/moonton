@@ -4,7 +4,7 @@ import { Head } from "@inertiajs/react";
 import FeaturedMovie from "@/Components/FeaturedMovie";
 import MovieCard from "@/Components/MovieCard";
 
-export default function Dashboard({ auth, featuredMovies, movies }) {
+export default function Dashboard({ auth, featuredMovies, movies, imageUrl }) {
     const flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -34,7 +34,7 @@ export default function Dashboard({ auth, featuredMovies, movies }) {
                             slug={featuredMovie.slug}
                             name={featuredMovie.name}
                             category={featuredMovie.category}
-                            thumbnail={featuredMovie.thumbnail}
+                            thumbnail={`${imageUrl}/storage/movies/${featuredMovie.thumbnail}`}
                             rating={featuredMovie.rating}
                         />
                     ))}
@@ -51,7 +51,7 @@ export default function Dashboard({ auth, featuredMovies, movies }) {
                             slug={movie.slug}
                             name={movie.name}
                             category={movie.category}
-                            thumbnail={movie.thumbnail}
+                            thumbnail={`${imageUrl}/storage/movies/${movie.thumbnail}`}
                         />
                     ))}
                 </Flickity>
