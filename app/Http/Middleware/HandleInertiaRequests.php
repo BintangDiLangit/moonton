@@ -62,7 +62,8 @@ class HandleInertiaRequests extends Middleware
                 'type' => Session::get('type')
             ],
             'env' => [
-                'MIDTRANS_CLIENT_KEY' => env('MIDTRANS_CLIENT_KEY')
+                'MIDTRANS_CLIENT_KEY' => env('MIDTRANS_CLIENT_KEY'),
+                'MIDTRANS_ENDPOINT' => env('MIDTRANS_ENDPOINT')
             ],
             'ziggy' => fn () => [
                 ...(new Ziggy)->toArray(),

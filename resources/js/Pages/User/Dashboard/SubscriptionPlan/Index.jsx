@@ -35,7 +35,7 @@ export default function SubscriptionPlan({ auth, subscriptionPlans, env }) {
         <Authenticated auth={auth}>
             <Head title="Subscription Plan">
                 <script
-                    src="https://app.sandbox.midtrans.com/snap/snap.js"
+                    src={`${env.MIDTRANS_ENDPOINT}/snap/snap.js`}
                     data-client-key={env.MIDTRANS_CLIENT_KEY}
                 ></script>
             </Head>
