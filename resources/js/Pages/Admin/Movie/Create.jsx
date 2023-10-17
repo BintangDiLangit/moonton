@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Label from "@/Components/Label";
-import Authenticated from "@/Layouts/Authenticated";
+import Authenticated from "@/Layouts/Authenticated/Index";
 import { Head, Link, useForm } from "@inertiajs/react";
 import Input from "@/Components/Input";
 import InputError from "@/Components/InputError";

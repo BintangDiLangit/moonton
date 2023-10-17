@@ -1,5 +1,5 @@
 import SubscriptionCard from "@/Components/SubscriptionCard";
-import Authenticated from "@/Layouts/Authenticated/index";
+import Authenticated from "@/Layouts/Authenticated/Index";
 import { Inertia } from "@inertiajs/inertia";
 import { Head, router } from "@inertiajs/react";
 

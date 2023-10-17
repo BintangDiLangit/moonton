@@ -1,6 +1,6 @@
 import Button from "@/Components/Button";
 import FlashMessage from "@/Components/FlashMassage";
-import Authenticated from "@/Layouts/Authenticated";
+import Authenticated from "@/Layouts/Authenticated/Index";
 import { Link, Head, useForm } from "@inertiajs/react";
 
 export default function Index({ auth, flashMessage, movies, imageUrl }) {
