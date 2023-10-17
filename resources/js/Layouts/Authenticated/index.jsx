@@ -1,7 +1,7 @@
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 
-export default function Authenticated({ auth, children }) {
+export default function Index({ auth, children }) {
     return (
         <>
             <div className="mx-auto max-w-screen hidden lg:block">
